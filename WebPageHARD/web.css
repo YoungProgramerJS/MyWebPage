@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Sedan+SC&display=swap'); /*FONT*/
+
+/* ANIMATE */
+
+@keyframes shake {
+    0% { transform: translateX(0); } 
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); } 
+    100% { transform: translateX(0); } 
+}
+
+@keyframes smallBig {
+    from {
+        opacity: 0;
+        transform: scale(0.2); 
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1; 
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* CSS */
+
+body {
+    background: rgb(29,35,36);
+    background: linear-gradient(180deg, rgba(29,35,36,1) 28%, rgba(24,45,75,1) 78%, rgba(2,87,239,1) 98%, rgba(0,91,255,1) 100%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Sedan SC", serif;
+    font-weight: 400;
+    font-style: normal;
+    margin-bottom: 50px;
+    color: white;
+}
+
+.ALL {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.Title{
+    margin-top: 20%;
+    margin-bottom: 20%;
+}
+
+.welcome {
+    font-size: 70px;
+    animation: smallBig 3s ease forwards;
+    opacity: 0;
+}
+
+.my_world{
+    font-size: 36px;
+    animation: smallBig 3s ease forwards;
+    animation-delay: 2s;
+    opacity: 0;
+    text-align: center;
+}
+
+.MY{
+    font-size: 36px;
+    animation: smallBig 3s ease forwards;
+    animation-delay: 3s;
+    opacity: 0;
+}
+
+.LoginPage, .MusicianPage, .weatherPage, .DarkModePage {
+    width: 750px; 
+    height: 600px; 
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.LoginPage:hover, .MusicianPage:hover {
+    transform: scale(1.2) translateX(50px);
+    cursor: pointer;
+}
+
+.weatherPage:hover , .DarkModePage:hover {
+    transform: scale(1.2) translateX(-50px);
+    cursor: pointer;
+}
+
+iframe {
+    width: 100%; 
+    height: 100%; 
+    border: none;
+}
+
+.LoginPagePiece, .MusicianPiece, .weatherPiece, .DarkModePiece {
+    width: 100%;
+    margin-top: 150px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    transition: transform 0.5s ease, opacity 1s;
+    opacity: 0;
+}
+
+.LoginPagePiece.animate, .MusicianPiece.animate {
+    opacity: 1;
+    animation: slideInLeft 1s ease forwards;
+}
+
+.weatherPiece.animate, .DarkModePiece.animate {
+    opacity: 1;
+    animation: slideInRight 1s ease forwards;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 40%;
+}
+
+.bigtext {
+    font-size: 52px;
+    line-height: 0.8;
+}
+
+.smalltext{
+    text-wrap: break-word;
+}
+
+.weatherPiece .DarkModePiece{
+    width: 100%;
+    margin-top: 150px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+ul li {
+    font-size: 30px; /* Zwiększ rozmiar czcionki dla elementów listy */
+}
